@@ -3,11 +3,12 @@ import { IoFilterSharp } from "react-icons/io5";
 
 type Props = {
     callback: (value: string[]) => void
+    data: string[]
 }
 
-const FilterOverlay = ({ callback }: Props) => {
-    return (
+const FilterOverlay = ({ callback, data }: Props) => {
 
+    return (
         <Popover placement="right" showArrow backdrop='blur'>
             <PopoverTrigger>
                 <div className="absolute top-5 left-5">
@@ -20,7 +21,7 @@ const FilterOverlay = ({ callback }: Props) => {
                 <div className="px-1 py-2 space-y-3">
                     <div className="text-small font-bold">Filtering Polygon</div>
                     <CheckboxGroup
-                        defaultValue={[]}
+                        defaultValue={data}
                         orientation="horizontal"
                         onValueChange={(value) => {
                             callback(value)

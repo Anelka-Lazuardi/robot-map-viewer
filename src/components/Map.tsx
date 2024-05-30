@@ -137,7 +137,7 @@ const Map = (props: Props) => {
             <FullscreenControl />
             <NavigationControl />
             <ScaleControl />
-            <FilterOverlay callback={setFilter} />
+            <FilterOverlay callback={setFilter} data={filter} />
             <NavigationConfig />
         </Maplibre>
     );
