@@ -58,7 +58,7 @@ model Robot {
   order          Int?
   heading        Float
 
-  overlay   Overlay @relation(fields: [overlayId], references: [id])
+  overlay   Overlay @relation(fields: [overlayId], references: [id], onDelete: Cascade)
   overlayId BigInt
 }
 

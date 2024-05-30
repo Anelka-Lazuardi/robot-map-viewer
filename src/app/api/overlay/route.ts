@@ -1,6 +1,5 @@
-import { handlePrismaError, handlePrismaErrorWrapper, transformBigIntToString } from "@/utils/api";
+import { handlePrismaErrorWrapper, transformBigIntToString } from "@/utils/api";
 import { PrismaClient } from '@prisma/client';
-import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import { NextRequest } from "next/server";
 import fs from "node:fs/promises";
 
