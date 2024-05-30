@@ -1,0 +1,71 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+// [103.77819722, 1.30145556], // Top-left corner
+//       [103.78142222, 1.30223611], // Top-right corner
+//       [103.78210556, 1.29943611], // Bottom-right corner
+//       [103.77887778, 1.29865278], // Bottom-left corner
+model Overlay {
+  id        BigInt   @id @default(sequence())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  name String @unique
+
+  description String?
+  image       String
+
+  dimensionWidth  Int
+  dimensionHeight Int
+
+  topLeftLatitude  Float
+  topLeftLongitude Float
+
+  topRightLatitude  Float
+  topRightLongitude Float
+
+  bottomRightLatitude  Float
+  bottomRightLongitude Float
+
+  bottomLeftLatitude  Float
+  bottomLeftLongitude Float
+
+  robot Robot[]
+}
+
+model Robot {
+  id        BigInt   @id @default(sequence())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  name           String  @unique
+  positionX      Float
+  positionY      Float
+  additionalData String?
+  marker         String
+  order          Int?
+  heading        Float
+
+  overlay   Overlay @relation(fields: [overlayId], references: [id])
+  overlayId BigInt
+}
+
+model MapConfig {
+  id        BigInt   @id @default(sequence())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String   @unique
+  value     String
+}

@@ -9,18 +9,44 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/breadcrumbs": "^2.0.8",
+    "@nextui-org/button": "^2.0.32",
+    "@nextui-org/card": "^2.0.29",
+    "@nextui-org/checkbox": "^2.1.0",
+    "@nextui-org/input": "^2.2.0",
+    "@nextui-org/listbox": "^2.1.20",
+    "@nextui-org/popover": "^2.1.22",
+    "@nextui-org/progress": "^2.0.29",
+    "@nextui-org/react": "^2.4.0",
+    "@nextui-org/select": "^2.2.0",
+    "@nextui-org/table": "^2.0.34",
+    "@nextui-org/tabs": "^2.0.30",
+    "@prisma/client": "5.14.0",
+    "@tanstack/react-form": "^0.20.2",
+    "@tanstack/react-query": "^5.40.0",
+    "@tanstack/zod-form-adapter": "^0.20.2",
+    "axios": "^1.7.2",
+    "framer-motion": "^11.2.6",
+    "geolib": "^3.3.4",
+    "maplibre-gl": "^4.3.2",
+    "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.3"
+    "react-dropzone": "^14.2.3",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^5.2.1",
+    "react-map-gl": "^7.1.7",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "eslint-config-next": "14.2.3",
+    "postcss": "^8",
+    "prisma": "5.14.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
